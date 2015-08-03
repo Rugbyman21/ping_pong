@@ -4,10 +4,12 @@ class Fixnum
     count = 0
     self.times() do
       count = count.+(1)
-      if count.==(3)
-        pingpong_array.push("ping")
-      elsif count.==(5)
+      if count.%(15) == 0
+        pingpong_array.push("ping-pong")
+      elsif count.%(5) == 0
         pingpong_array.push("pong")
+      elsif count.%(3) == 0
+        pingpong_array.push("ping")
       else
         pingpong_array.push(count)
       end
